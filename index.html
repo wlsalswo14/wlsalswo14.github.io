@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>진민재 | Jin Minjae — AI Systems & Hardware Accelerator Student</title>
-    <meta name="description" content="서울과학기술대학교 지능형반도체공학과 진민재의 포트폴리오 사이트입니다. 지능형 센서 연구실에서 AI 가속기 및 AI 에이전트, Loop Engineering을 공부하고 있습니다.">
+    <title>Minjae Jin | AI Systems & Hardware Accelerators</title>
+    <meta name="description" content="Portfolio of Minjae Jin. Active developer at vergins lab and Intelligent Semiconductor Engineering student at SeoulTech. Studying AI accelerators and RAG systems.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Main Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Cybernetic Ambient Background Grid -->
-    <div class="grid-background" id="grid-bg"></div>
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
+    <!-- Glowing background decorative objects (orbs) -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="grid-overlay"></div>
 
     <!-- Header Navigation -->
     <header class="main-header" id="header">
@@ -25,12 +25,32 @@
                 <span class="logo-bracket">&lt;</span><span class="logo-letter">J</span><span class="logo-letter">M</span><span class="logo-dot">.</span><span class="logo-letter">J</span><span class="logo-bracket">/&gt;</span>
             </a>
             <nav class="nav-menu" id="nav-menu">
-                <a href="#about" class="nav-link" id="link-about">About</a>
-                <a href="#interests" class="nav-link" id="link-interests">Core Interests</a>
-                <a href="#experience" class="nav-link" id="link-experience">Experience</a>
-                <a href="#milestones" class="nav-link" id="link-milestones">Achievements</a>
-                <a href="#contact" class="nav-link nav-btn" id="link-contact">Contact</a>
+                <a href="#about" class="nav-link" id="link-about">
+                    <span class="lang-en">About</span>
+                    <span class="lang-ko">소개</span>
+                </a>
+                <a href="#interests" class="nav-link" id="link-interests">
+                    <span class="lang-en">Core Interests</span>
+                    <span class="lang-ko">핵심 기술</span>
+                </a>
+                <a href="#experience" class="nav-link" id="link-experience">
+                    <span class="lang-en">Experience</span>
+                    <span class="lang-ko">경력</span>
+                </a>
+                <a href="#milestones" class="nav-link" id="link-milestones">
+                    <span class="lang-en">Achievements</span>
+                    <span class="lang-ko">주요 성과</span>
+                </a>
+                <a href="#contact" class="nav-link nav-btn" id="link-contact">
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-ko">연락처</span>
+                </a>
             </nav>
+            <div class="lang-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="ko">KO</button>
+            </div>
         </div>
     </header>
 
@@ -41,13 +61,18 @@
             <div class="hero-content">
                 <div class="badge fade-in" id="hero-badge">SeoulTech | Intelligent Semiconductor Engineering</div>
                 <h1 class="hero-title fade-in" id="hero-main-title">
-                    Hello, I'm <span class="highlight">Minjae Jin</span>
+                    <span class="lang-en">Hello, I'm <span class="highlight">Minjae Jin</span></span>
+                    <span class="lang-ko">안녕하세요, <span class="highlight">진민재</span>입니다</span>
                 </h1>
                 <h2 class="hero-subtitle fade-in" id="hero-sub-title">
-                    Building the future with<br><span class="typing-text" id="typing-target">Grounded RAG</span>
+                    <span class="lang-en">Building the future with</span>
+                    <span class="lang-ko">다음 기술로 미래를 개척합니다</span>
+                    <br>
+                    <span class="typing-text" id="typing-target">Grounded RAG</span>
                 </h2>
                 <p class="hero-description fade-in" id="hero-desc">
-                    저는 신뢰할 수 있는 지식 기반 인공지능(RAG) 시스템과 견고한 풀스택 아키텍처를 설계합니다. 복잡한 데이터 도메인과 고성능 클라이언트 경험을 연동합니다.
+                    <span class="lang-en">I design reliable, knowledge-grounded AI (RAG) systems and robust full-stack architectures, connecting complex data domains with high-performance client experiences.</span>
+                    <span class="lang-ko">저는 신뢰할 수 있는 지식 기반 인공지능(RAG) 시스템과 견고한 풀스택 아키텍처를 설계합니다. 복잡한 데이터 도메인과 고성능 클라이언트 경험을 연동합니다.</span>
                 </p>
             </div>
         </section>
@@ -57,36 +82,63 @@
             <div class="section-container">
                 <div class="section-header">
                     <span class="section-num">01.</span>
-                    <h2 class="section-title">About Me</h2>
+                    <h2 class="section-title">
+                        <span class="lang-en">About Me</span>
+                        <span class="lang-ko">소개</span>
+                    </h2>
                     <div class="section-line"></div>
                 </div>
                 <div class="about-grid">
                     <div class="about-text">
-                        <p class="paragraph">
+                        <p class="paragraph lang-en">
+                            Hello! I am <strong>Minjae Jin</strong>, an active developer and founding member at the startup <strong>vergins lab</strong>, where I build production-grade interactive AI platforms.
+                        </p>
+                        <p class="paragraph lang-ko">
                             안녕하세요! 저는 스타트업 <strong>vergins lab</strong>의 창업 멤버이자 개발자로 참여하여 실전 프로덕트와 대화형 AI 시스템을 구축하고 있는 <strong>진민재</strong>입니다.
                         </p>
-                        <p class="paragraph">
+                        
+                        <p class="paragraph lang-en">
+                            Simultaneously, I am pursuing my degree in Intelligent Semiconductor Engineering at Seoul National University of Science and Technology (SeoulTech), where I study NPU hardware design and optimization at the <strong>Intelligent Sensor Lab</strong> to efficiently accelerate deep learning computations.
+                        </p>
+                        <p class="paragraph lang-ko">
                             동시에 서울과학기술대학교 지능형반도체공학과에 재학하며 학과 내 <strong>지능형 센서 연구실 (Intelligent Sensor Lab)</strong>에서 딥러닝 연산을 가속화하기 위한 <strong>AI 가속기(AI Hardware Accelerator)</strong> 설계 및 최적화 기법을 공부하고 있습니다.
                         </p>
-                        <p class="paragraph">
+
+                        <p class="paragraph lang-en">
+                            I am expanding my research boundaries toward the intersection of clever software systems design and hardware-level compute efficiency optimization.
+                        </p>
+                        <p class="paragraph lang-ko">
                             소프트웨어의 영리한 시스템 아키텍처 구현과 하드웨어 단에서의 자원 효율 극대화가 융합되는 지점을 목표로 삼고 연구와 배움의 범위를 넓혀가고 있습니다.
                         </p>
+
                         <div class="academic-details">
                             <div class="detail-item" id="edu-role">
                                 <span class="detail-label">Startup</span>
-                                <span class="detail-val">창업 멤버 & 개발자 @ vergins lab (2026. 02 — Present)</span>
+                                <span class="detail-val">
+                                    <span class="lang-en">Founding Member & Developer @ vergins lab (2026. 02 — Present)</span>
+                                    <span class="lang-ko">창업 멤버 & 개발자 @ vergins lab (2026. 02 — 현재)</span>
+                                </span>
                             </div>
                             <div class="detail-item" id="edu-school">
                                 <span class="detail-label">University</span>
-                                <span class="detail-val">서울과학기술대학교 (SeoulTech)</span>
+                                <span class="detail-val">
+                                    <span class="lang-en">Seoul National University of Science and Technology (SeoulTech)</span>
+                                    <span class="lang-ko">서울과학기술대학교 (SeoulTech)</span>
+                                </span>
                             </div>
                             <div class="detail-item" id="edu-dept">
                                 <span class="detail-label">Department</span>
-                                <span class="detail-val">지능형반도체공학과 (Intelligent Semiconductor Engineering)</span>
+                                <span class="detail-val">
+                                    <span class="lang-en">Intelligent Semiconductor Engineering</span>
+                                    <span class="lang-ko">지능형반도체공학과 (Intelligent Semiconductor Engineering)</span>
+                                </span>
                             </div>
                             <div class="detail-item" id="edu-period">
                                 <span class="detail-label">Period</span>
-                                <span class="detail-val">2023. 03 — 2029. 02 (졸업 예정)</span>
+                                <span class="detail-val">
+                                    <span class="lang-en">2023. 03 — 2029. 02 (Expected Graduation)</span>
+                                    <span class="lang-ko">2023. 03 — 2029. 02 (졸업 예정)</span>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -97,8 +149,14 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
                             </div>
                             <h3>vergins lab</h3>
-                            <p class="lab-desc">Founding Member & Developer</p>
-                            <div class="lab-tag">System & UI Development</div>
+                            <p class="lab-desc">
+                                <span class="lang-en">Founding Member & Developer</span>
+                                <span class="lang-ko">창업 멤버 & 개발자</span>
+                            </p>
+                            <div class="lab-tag">
+                                <span class="lang-en">System & UI Development</span>
+                                <span class="lang-ko">시스템 및 UI 개발</span>
+                            </div>
                         </div>
 
                         <!-- 지능형 센서 연구실 Highlight Card -->
@@ -106,9 +164,18 @@
                             <div class="lab-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                             </div>
-                            <h3>지능형 센서 연구실</h3>
-                            <p class="lab-desc">Intelligent Sensor Laboratory</p>
-                            <div class="lab-tag">AI Accelerator Study</div>
+                            <h3>
+                                <span class="lang-en">Intelligent Sensor Lab</span>
+                                <span class="lang-ko">지능형 센서 연구실</span>
+                            </h3>
+                            <p class="lab-desc">
+                                <span class="lang-en">Intelligent Sensor Laboratory</span>
+                                <span class="lang-ko">지능형 센서 연구실</span>
+                            </p>
+                            <div class="lab-tag">
+                                <span class="lang-en">AI Accelerator Study</span>
+                                <span class="lang-ko">AI 가속기 연구</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +187,10 @@
             <div class="section-container">
                 <div class="section-header">
                     <span class="section-num">02.</span>
-                    <h2 class="section-title">System Design & Core Interests</h2>
+                    <h2 class="section-title">
+                        <span class="lang-en">System Design & Core Interests</span>
+                        <span class="lang-ko">시스템 디자인 및 관심 기술</span>
+                    </h2>
                     <div class="section-line"></div>
                 </div>
                 <div class="interests-grid">
@@ -140,7 +210,10 @@
                             </svg>
                         </div>
                         <h3 class="card-title">Knowledge-Grounded AI (RAG)</h3>
-                        <p class="card-text">
+                        <p class="card-text lang-en">
+                            I design stable RAG architectures that ensure AI models formulate answers grounded in verified database information, complete with precise source citations.
+                        </p>
+                        <p class="card-text lang-ko">
                             인공지능 모델이 데이터베이스의 확실한 검증 정보에 입각하여 정확한 출처(Citation)와 함께 답변을 구성하도록 안정성 높은 RAG 시스템을 설계합니다.
                         </p>
                     </div>
@@ -155,7 +228,10 @@
                             </svg>
                         </div>
                         <h3 class="card-title">Decoupled System Integration</h3>
-                        <p class="card-text">
+                        <p class="card-text lang-en">
+                            I architect decoupled integrations by isolating boundaries between data layers, core compute engines, and client shells, unifying diverse cloud and local model runtimes.
+                        </p>
+                        <p class="card-text lang-ko">
                             데이터 저장소, 연산 엔진, 클라이언트의 경계를 독립적으로 격리하고, 클라우드 및 로컬 모델 등 다양한 이기종 스택을 연동하여 시스템 통합을 설계합니다.
                         </p>
                     </div>
@@ -168,7 +244,10 @@
                             </svg>
                         </div>
                         <h3 class="card-title">AI Hardware Accelerators</h3>
-                        <p class="card-text">
+                        <p class="card-text lang-en">
+                            I analyze NPU microarchitectures designed to accelerate deep learning operations, studying methods to mitigate physical memory and compute bottlenecks on edge devices.
+                        </p>
+                        <p class="card-text lang-ko">
                             딥러닝 연산을 효율적으로 가속화하기 위한 물리적 NPU 하드웨어 구조를 분석하고, 제한된 자원 환경에서의 온디바이스 연산 병목 개선을 공부하고 있습니다.
                         </p>
                     </div>
@@ -181,7 +260,10 @@
             <div class="section-container">
                 <div class="section-header">
                     <span class="section-num">03.</span>
-                    <h2 class="section-title">Experience</h2>
+                    <h2 class="section-title">
+                        <span class="lang-en">Experience</span>
+                        <span class="lang-ko">경력 및 활동</span>
+                    </h2>
                     <div class="section-line"></div>
                 </div>
                 <div class="experience-grid">
@@ -190,12 +272,21 @@
                         <div class="exp-header">
                             <div class="exp-title-box">
                                 <h3 class="exp-company">vergins lab</h3>
-                                <span class="exp-role">창업 멤버 & 개발자</span>
+                                <span class="exp-role">
+                                    <span class="lang-en">Founding Member & Developer</span>
+                                    <span class="lang-ko">창업 멤버 & 개발자</span>
+                                </span>
                             </div>
-                            <span class="exp-date">2026. 02 — Present</span>
+                            <span class="exp-date">
+                                <span class="lang-en">2026. 02 — Present</span>
+                                <span class="lang-ko">2026. 02 — 현재</span>
+                            </span>
                         </div>
                         <h4 class="exp-project">Domain-Specific RAG & Multi-Model Chat Platform</h4>
-                        <p class="exp-desc">
+                        <p class="exp-desc lang-en">
+                            Joined as an early member of the startup and led the full-stack system architecture and integration of our domain-specific RAG platform. Handled everything from source citation pipelines and local/cloud runtime orchestration to state-preserving client session storages.
+                        </p>
+                        <p class="exp-desc lang-ko">
                             스타트업 초기 멤버로 합류하여 특정 도메인 데이터의 검색 신뢰성을 극대화하는 RAG 플랫폼과 대화형 시스템 개발을 주도하고 있습니다. 답변의 신뢰도를 입증하는 출처 인용(Citation) 파이프라인 설계, 클라우드 및 온디바이스 로컬 모델의 유기적 런타임 조율, 그리고 상태 보존형 클라이언트 세션 스토리지 구현에 이르기까지 풀스택 통합 설계를 담당하고 있습니다.
                         </p>
                         <div class="exp-tech-tags">
@@ -213,7 +304,10 @@
             <div class="section-container">
                 <div class="section-header">
                     <span class="section-num">04.</span>
-                    <h2 class="section-title">Achievements</h2>
+                    <h2 class="section-title">
+                        <span class="lang-en">Achievements</span>
+                        <span class="lang-ko">주요 성과</span>
+                    </h2>
                     <div class="section-line"></div>
                 </div>
                 <div class="timeline">
@@ -221,8 +315,14 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
                             <div class="timeline-date">2026</div>
-                            <h3 class="timeline-title">U300 학생창업팀 선정</h3>
-                            <p class="timeline-desc">
+                            <h3 class="timeline-title">
+                                <span class="lang-en">Selected for National U300 Student Startup Team</span>
+                                <span class="lang-ko">U300 학생창업팀 선정</span>
+                            </h3>
+                            <p class="timeline-desc lang-en">
+                                Selected for the government-backed U300 Student Startup Team in recognition of our custom domain-specific RAG engine architecture and conversational AI platform. Participated in prototype development to learn the real-world value of technical systems.
+                            </p>
+                            <p class="timeline-desc lang-ko">
                                 자체 설계한 도메인 특화 RAG 엔진 아키텍처와 대화형 AI 플랫폼의 기술력을 인정받아 범부처 학생 창업 유망팀 300(U300)에 선정되었습니다. 아이디어 빌딩 단계부터 핵심 프로토타입 구현 과정에 주도적으로 참여하며 기술의 실현 가치를 배우는 중입니다.
                             </p>
                         </div>
@@ -236,12 +336,21 @@
             <div class="section-container">
                 <div class="section-header">
                     <span class="section-num">05.</span>
-                    <h2 class="section-title">Contact</h2>
+                    <h2 class="section-title">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-ko">연락처</span>
+                    </h2>
                     <div class="section-line"></div>
                 </div>
                 <div class="contact-card">
-                    <h3 class="contact-heading">Contact Me</h3>
-                    <p class="contact-text">
+                    <h3 class="contact-heading">
+                        <span class="lang-en">Contact Me</span>
+                        <span class="lang-ko">문의 및 연락</span>
+                    </h3>
+                    <p class="contact-text lang-en">
+                        Feel free to reach out if you'd like to discuss knowledge-grounded AI (RAG) systems, NPU hardware acceleration architectures, or robust full-stack system integrations.
+                    </p>
+                    <p class="contact-text lang-ko">
                         지식 기반 인공지능(RAG) 시스템, NPU 하드웨어 가속 구조, 혹은 견고한 풀스택 시스템 아키텍처에 대해 이야기 나누고 싶으시다면 언제든 연락해 주세요.
                     </p>
                     
@@ -252,7 +361,10 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             </div>
                             <div class="channel-info">
-                                <span class="channel-label">Email</span>
+                                <span class="channel-label">
+                                    <span class="lang-en">Email</span>
+                                    <span class="lang-ko">이메일</span>
+                                </span>
                                 <span class="channel-val" id="email-value">wlsalswo14@gmail.com</span>
                             </div>
                             <button class="copy-btn" id="btn-copy-email" aria-label="Copy email to clipboard">Copy</button>

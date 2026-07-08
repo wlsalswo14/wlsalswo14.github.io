@@ -1193,3 +1193,49 @@ section {
         font-size: 1.3rem;
     }
 }
+
+/* Language Toggle Rules */
+html[lang="en"] .lang-ko { display: none !important; }
+html[lang="ko"] .lang-en { display: none !important; }
+
+/* Language Selector Widget in Nav */
+.lang-selector {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2px 4px;
+    margin-left: 15px;
+}
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+.lang-btn.active {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.1);
+}
+.lang-btn:hover:not(.active) {
+    color: var(--color-cyan);
+}
+.lang-divider {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 0.7rem;
+    margin: 0;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .lang-selector {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}

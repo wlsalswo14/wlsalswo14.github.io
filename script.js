@@ -18,10 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Run once in case page is refreshed while scrolled
 
-    // 2. Typing Effect for Hero Subtitle
+    // 2. Language Selection Logic
+    const langBtns = document.querySelectorAll('.lang-btn');
     const typingTarget = document.getElementById('typing-target');
-    typingTarget.textContent = ''; // Clear static HTML placeholder text
-    const segments = ['Grounded RAG', ', Decoupled Systems', ', AI Accelerators'];
+    let typingTimeout;
+    let holdTimeout;
+    
+    const getTypingSegments = () => {
+        const lang = document.documentElement.getAttribute('lang') || 'en';
+        if (lang === 'ko') {
+            return ['출처 기반 RAG', ', 디커플링 시스템', ', AI 하드웨어 가속기'];
+        }
+        return ['Grounded RAG', ', Decoupled Systems', ', AI Accelerators'];
+    };
+
+    let segments = getTypingSegments();
     let segmentIndex = 0;
     let charIndex = 0;
 
@@ -33,28 +44,72 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Type next character
                 typingTarget.textContent += currentSegment.charAt(charIndex);
                 charIndex++;
-                setTimeout(typeEffect, 65); // Speed of typing letters (1.5x faster, ~65ms)
+                typingTimeout = setTimeout(typeEffect, 65); // Speed of typing letters (1.5x faster, ~65ms)
             } else {
                 // Segment completed, pause shortly before next segment
                 segmentIndex++;
                 charIndex = 0;
-                setTimeout(typeEffect, 300); // Pause between items (1.5x faster, ~300ms)
+                typingTimeout = setTimeout(typeEffect, 300); // Pause between items (1.5x faster, ~300ms)
             }
         } else {
             // All segments completed, pause before clearing
-            setTimeout(() => {
+            holdTimeout = setTimeout(() => {
                 // Clear all at once
                 typingTarget.textContent = '';
                 segmentIndex = 0;
                 charIndex = 0;
                 // Wait before starting the cycle again
-                setTimeout(typeEffect, 800);
+                typingTimeout = setTimeout(typeEffect, 800);
             }, 3900); // Hold full text for 3.9 seconds (1.3x longer)
         }
     };
 
-    // Start typing effect after initial fade-in animations finish
-    setTimeout(typeEffect, 1000);
+    // Initialize language
+    const initLanguage = () => {
+        const lang = localStorage.getItem('portfolio-lang') || 'en';
+        document.documentElement.setAttribute('lang', lang);
+        langBtns.forEach(btn => {
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        segments = getTypingSegments();
+        segmentIndex = 0;
+        charIndex = 0;
+        typingTarget.textContent = '';
+        typingTimeout = setTimeout(typeEffect, 1000); // 1s delay on initial load
+    };
+
+    langBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const selectedLang = btn.getAttribute('data-lang');
+            if (document.documentElement.getAttribute('lang') !== selectedLang) {
+                document.documentElement.setAttribute('lang', selectedLang);
+                localStorage.setItem('portfolio-lang', selectedLang);
+                
+                langBtns.forEach(b => {
+                    if (b.getAttribute('data-lang') === selectedLang) {
+                        b.classList.add('active');
+                    } else {
+                        b.classList.remove('active');
+                    }
+                });
+                
+                // Cancel existing timeouts and restart typing
+                clearTimeout(typingTimeout);
+                clearTimeout(holdTimeout);
+                typingTarget.textContent = '';
+                segments = getTypingSegments();
+                segmentIndex = 0;
+                charIndex = 0;
+                typeEffect();
+            }
+        });
+    });
+
+    initLanguage();
 
     // 3. Scroll Reveal (Intersection Observer)
     const revealElements = document.querySelectorAll('.scroll-reveal');
@@ -110,12 +165,14 @@ document.addEventListener('DOMContentLoaded', () => {
         copyEmailBtn.addEventListener('click', () => {
             navigator.clipboard.writeText(emailValue)
                 .then(() => {
+                    const lang = document.documentElement.getAttribute('lang') || 'en';
                     // Show toast notification
+                    toast.textContent = lang === 'ko' ? '이메일 주소가 복사되었습니다!' : 'Email copied to clipboard!';
                     toast.classList.add('show');
                     
                     // Change button text temporarily
                     const originalText = copyEmailBtn.textContent;
-                    copyEmailBtn.textContent = 'Copied!';
+                    copyEmailBtn.textContent = lang === 'ko' ? '복사됨!' : 'Copied!';
                     copyEmailBtn.style.background = 'var(--color-cyan)';
                     copyEmailBtn.style.color = 'var(--bg-darkest)';
                     copyEmailBtn.style.borderColor = 'var(--color-cyan)';
