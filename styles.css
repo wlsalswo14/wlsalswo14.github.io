@@ -1195,6 +1195,7 @@ section {
         font-size: clamp(1.25rem, 5.2vw, 1.55rem);
         line-height: 1.35;
         margin-bottom: 18px;
+        min-height: 4.1em;
     }
     .typing-text {
         display: inline;
