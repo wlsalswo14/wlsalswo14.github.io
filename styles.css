@@ -41,6 +41,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    min-width: 0;
 }
 
 html {
@@ -51,12 +52,16 @@ html {
     font-size: 16px;
     line-height: 1.6;
     overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
     position: relative;
     min-height: 100vh;
     background: var(--grad-dark);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 /* Custom Scrollbar */
@@ -148,6 +153,7 @@ a {
 /* Helper Badges & Buttons */
 .badge {
     display: inline-block;
+    max-width: 100%;
     padding: 6px 14px;
     background: rgba(0, 242, 254, 0.06);
     border: 1px solid rgba(0, 242, 254, 0.2);
@@ -218,6 +224,7 @@ a {
 
 .nav-container {
     max-width: var(--max-width);
+    width: 100%;
     margin: 0 auto;
     height: 100%;
     display: flex;
@@ -364,6 +371,7 @@ a {
 /* Sections Structure */
 section {
     padding: 100px 24px;
+    width: 100%;
     max-width: var(--max-width);
     margin: 0 auto;
 }
@@ -409,12 +417,14 @@ section {
 
 .hero-content {
     max-width: 700px;
+    width: 100%;
 }
 
 .hero-title {
     font-size: clamp(1.5rem, 5vw, 4.2rem);
     line-height: 1.1;
     margin-bottom: 20px;
+    overflow-wrap: break-word;
 }
 
 .hero-subtitle {
@@ -422,6 +432,7 @@ section {
     font-weight: 500;
     color: var(--text-secondary);
     margin-bottom: 24px;
+    overflow-wrap: break-word;
 }
 
 .typing-text {
@@ -439,6 +450,7 @@ section {
     margin-bottom: 40px;
     color: #FFFFFF; /* Pure white color for maximum contrast and legibility */
     max-width: 600px;
+    overflow-wrap: break-word;
 }
 
 .hero-actions {
@@ -534,6 +546,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .lab-card {
@@ -544,6 +557,7 @@ section {
     position: relative;
     overflow: hidden;
     transition: var(--transition-smooth);
+    width: 100%;
 }
 
 .lab-card:hover {
@@ -624,6 +638,7 @@ section {
     padding: 35px;
     transition: var(--transition-smooth);
     position: relative;
+    width: 100%;
 }
 
 .interest-card:hover {
@@ -682,6 +697,7 @@ section {
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .experience-card::before {
@@ -826,6 +842,7 @@ section {
     border-radius: var(--border-radius);
     padding: 30px;
     transition: var(--transition-smooth);
+    width: 100%;
 }
 
 .timeline-item:hover .timeline-content {
@@ -865,6 +882,7 @@ section {
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 .contact-card::before {
@@ -907,6 +925,7 @@ section {
     gap: 16px;
     text-align: left;
     transition: var(--transition-smooth);
+    width: 100%;
 }
 
 #contact-email-card {
@@ -989,7 +1008,7 @@ section {
 /* Toast Notification */
 .toast-notification {
     position: absolute;
-    bottom: -50px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--color-cyan);
@@ -999,12 +1018,15 @@ section {
     font-family: var(--font-heading);
     font-size: 0.85rem;
     font-weight: 600;
-    transition: bottom 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
     pointer-events: none;
 }
 
 .toast-notification.show {
-    bottom: 24px;
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Footer Section */
@@ -1096,13 +1118,16 @@ section {
 
 /* Responsive Web Design */
 @media (max-width: 900px) {
+    section {
+        width: 100%;
+    }
     .about-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
     .lab-card {
-        max-width: 450px;
-        margin: 0 auto;
+        max-width: none;
+        margin: 0;
     }
     .interests-grid {
         grid-template-columns: 1fr;
@@ -1111,38 +1136,76 @@ section {
 }
 
 @media (max-width: 600px) {
+    html {
+        font-size: 17px;
+    }
+    :root {
+        --header-height: 68px;
+    }
     section {
-        padding: 40px 12px;
+        padding: 56px 18px;
+    }
+    .section-header {
+        gap: 12px;
+        margin-bottom: 32px;
+    }
+    .section-num {
+        font-size: 1rem;
     }
     .section-title {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        overflow-wrap: break-word;
+    }
+    .badge {
+        font-size: 0.8rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+    .paragraph {
+        font-size: 1rem;
+        line-height: 1.75;
     }
     .detail-item {
         flex-direction: column;
         align-items: flex-start;
-        gap: 4px;
+        gap: 6px;
     }
     .detail-label {
         width: auto;
+        font-size: 0.82rem;
     }
     .detail-val {
-        font-size: 0.8rem;
+        font-size: 0.98rem;
+        white-space: normal;
+        line-height: 1.5;
     }
     .nav-menu {
         display: none;
     }
     .hero-title {
-        font-size: 1.5rem;
-        margin-bottom: 12px;
-    }
-    .hero-subtitle {
-        font-size: 1.1rem;
-        line-height: 1.4;
+        font-size: clamp(1.9rem, 8vw, 2.25rem);
+        line-height: 1.12;
         margin-bottom: 16px;
     }
+    .hero-title .lang-en .highlight {
+        display: block;
+    }
+    .hero-subtitle {
+        font-size: clamp(1.25rem, 5.2vw, 1.55rem);
+        line-height: 1.35;
+        margin-bottom: 18px;
+    }
+    .typing-text {
+        display: inline;
+        max-width: 100%;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
     .hero-description {
-        font-size: 0.95rem;
-        line-height: 1.5;
+        font-size: 1.05rem;
+        line-height: 1.7;
         margin-bottom: 30px;
     }
     .hero-actions {
@@ -1158,7 +1221,14 @@ section {
         margin-left: 0;
     }
     .contact-card {
-        padding: 24px 12px;
+        padding: 28px 16px;
+    }
+    .contact-heading {
+        font-size: 1.65rem;
+    }
+    .contact-text {
+        font-size: 1rem;
+        margin-bottom: 28px;
     }
     .footer-container {
         flex-direction: column;
@@ -1171,29 +1241,31 @@ section {
         gap: 10px;
     }
     .channel-card {
-        padding: 12px 14px;
-        gap: 10px;
+        padding: 16px 14px;
+        gap: 12px;
         flex-direction: row;
         align-items: center;
         text-align: left;
     }
     .channel-icon {
-        width: 32px;
-        height: 32px;
+        width: 38px;
+        height: 38px;
         flex-shrink: 0;
     }
     .channel-val {
-        font-size: 0.75rem;
-        word-break: normal;
-        white-space: nowrap;
+        font-size: 0.9rem;
+        line-height: 1.35;
+        word-break: break-word;
+        white-space: normal;
     }
     .channel-label {
-        font-size: 0.6rem;
+        font-size: 0.72rem;
     }
     .copy-btn {
-        padding: 6px 10px;
-        font-size: 0.7rem;
+        padding: 7px 10px;
+        font-size: 0.78rem;
         margin-top: 0;
+        flex-shrink: 0;
     }
     .channel-arrow {
         display: block;
@@ -1205,13 +1277,37 @@ section {
         gap: 6px;
     }
     .exp-company {
-        font-size: 1.2rem;
+        font-size: 1.35rem;
+    }
+    .exp-role,
+    .exp-date {
+        font-size: 0.95rem;
     }
     .exp-project {
-        font-size: 1rem;
+        font-size: 1.08rem;
     }
     .exp-desc {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    .lab-card,
+    .interest-card,
+    .experience-card,
+    .timeline-content {
+        padding: 24px 20px;
+    }
+    .lab-card h3,
+    .card-title,
+    .timeline-title {
+        font-size: 1.22rem;
+    }
+    .lab-desc,
+    .lab-role,
+    .card-text,
+    .timeline-desc,
+    .timeline-date,
+    .tech-tag {
+        font-size: 0.95rem;
     }
 }
 
