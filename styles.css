@@ -57,6 +57,8 @@ body {
     position: relative;
     min-height: 100vh;
     background: var(--grad-dark);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -1148,6 +1150,9 @@ section {
         gap: 12px;
         text-align: center;
     }
+    .hero-title {
+        font-size: clamp(1.2rem, 6.5vw, 2.2rem);
+    }
     .hero-subtitle {
         font-size: clamp(0.95rem, 4.2vw, 1.4rem);
         line-height: 1.4;
@@ -1172,6 +1177,8 @@ section {
         font-size: 0.8rem;
         word-break: normal;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .channel-label {
         font-size: 0.65rem;
