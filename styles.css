@@ -57,8 +57,6 @@ body {
     position: relative;
     min-height: 100vh;
     background: var(--grad-dark);
-    overflow-x: hidden;
-    width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -414,7 +412,7 @@ section {
 }
 
 .hero-title {
-    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-size: clamp(1.5rem, 5vw, 4.2rem);
     line-height: 1.1;
     margin-bottom: 20px;
 }
@@ -1114,7 +1112,10 @@ section {
 
 @media (max-width: 600px) {
     section {
-        padding: 60px 16px;
+        padding: 40px 12px;
+    }
+    .section-title {
+        font-size: 1.4rem;
     }
     .detail-item {
         flex-direction: column;
@@ -1125,10 +1126,24 @@ section {
         width: auto;
     }
     .detail-val {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     .nav-menu {
-        display: none; /* In a real project, we could implement a mobile menu, but for single-page portfolio a clean, simple scroll layout works well. We will keep nav header simple on desktop, hiding links on very small mobile. */
+        display: none;
+    }
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 16px;
+    }
+    .hero-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 30px;
     }
     .hero-actions {
         flex-direction: column;
@@ -1137,68 +1152,66 @@ section {
     .hero-metrics {
         grid-template-columns: 1fr;
         gap: 12px;
-        margin-top: 40px;
+        margin-top: 30px;
     }
     .btn-secondary {
         margin-left: 0;
     }
     .contact-card {
-        padding: 30px 16px;
+        padding: 24px 12px;
     }
     .footer-container {
         flex-direction: column;
         gap: 12px;
         text-align: center;
-    }
-    .hero-title {
-        font-size: clamp(1.2rem, 6.5vw, 2.2rem);
-    }
-    .hero-subtitle {
-        font-size: clamp(0.95rem, 4.2vw, 1.4rem);
-        line-height: 1.4;
+        font-size: 0.8rem;
     }
     .contact-channels {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
     }
     .channel-card {
-        padding: 14px 18px;
-        gap: 12px;
+        padding: 12px 14px;
+        gap: 10px;
         flex-direction: row;
         align-items: center;
         text-align: left;
     }
     .channel-icon {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         flex-shrink: 0;
     }
     .channel-val {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         word-break: normal;
         white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
     .channel-label {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
     }
     .copy-btn {
-        padding: 6px 12px;
-        font-size: 0.75rem;
+        padding: 6px 10px;
+        font-size: 0.7rem;
         margin-top: 0;
     }
     .channel-arrow {
         display: block;
-        width: 16px;
-        height: 16px;
+        width: 14px;
+        height: 14px;
     }
     .exp-header {
         flex-direction: column;
-        gap: 8px;
+        gap: 6px;
     }
     .exp-company {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+    }
+    .exp-project {
+        font-size: 1rem;
+    }
+    .exp-desc {
+        font-size: 0.9rem;
     }
 }
 
