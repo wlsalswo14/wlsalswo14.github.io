@@ -1192,13 +1192,14 @@ section {
         display: block;
     }
     .hero-subtitle {
-        font-size: clamp(1.25rem, 5.2vw, 1.55rem);
+        font-size: clamp(1.4rem, 6vw, 1.7rem);
         line-height: 1.35;
         margin-bottom: 18px;
-        min-height: 4.1em;
+        min-height: 2.8em;
     }
     .typing-text {
-        display: inline;
+        display: block;
+        margin-top: 4px;
         max-width: 100%;
         line-height: 1.35;
         white-space: nowrap;
