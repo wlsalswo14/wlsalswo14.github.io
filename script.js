@@ -41,27 +41,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentSegment = segments[segmentIndex];
         
         if (isDeleting) {
-            // Remove a character
+            // Delete character
             typingTarget.textContent = currentSegment.substring(0, charIndex - 1);
             charIndex--;
             
             if (charIndex === 0) {
                 isDeleting = false;
                 segmentIndex = (segmentIndex + 1) % segments.length;
-                typingTimeout = setTimeout(typeEffect, 500); // Pause before next word
+                typingTimeout = setTimeout(typeEffect, 400); // Wait before typing next word
             } else {
-                typingTimeout = setTimeout(typeEffect, 30); // Deleting speed
+                typingTimeout = setTimeout(typeEffect, 35); // Deleting speed
             }
         } else {
-            // Add a character
+            // Type character
             typingTarget.textContent = currentSegment.substring(0, charIndex + 1);
             charIndex++;
             
             if (charIndex === currentSegment.length) {
                 isDeleting = true;
-                typingTimeout = setTimeout(typeEffect, 2000); // Hold full word before deleting
+                typingTimeout = setTimeout(typeEffect, 2000); // Hold word for 2 seconds
             } else {
-                typingTimeout = setTimeout(typeEffect, 65); // Typing speed
+                typingTimeout = setTimeout(typeEffect, 75); // Typing speed
             }
         }
     };

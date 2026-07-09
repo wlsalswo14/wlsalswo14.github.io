@@ -368,6 +368,10 @@ a {
     background: rgba(0, 242, 254, 0.03);
 }
 
+.mobile-only-br {
+    display: none;
+}
+
 /* Sections Structure */
 section {
     padding: 100px 24px;
@@ -440,7 +444,7 @@ section {
     border-right: 2px solid var(--color-cyan);
     padding-right: 4px;
     animation: blink-cursor 0.75s step-end infinite;
-    white-space: nowrap;
+    white-space: pre-wrap;
     font-weight: 700; /* Bold typing text for better legibility */
 }
 
@@ -1192,17 +1196,19 @@ section {
         display: block;
     }
     .hero-subtitle {
-        font-size: clamp(1.4rem, 6vw, 1.7rem);
+        font-size: clamp(1.25rem, 5.2vw, 1.55rem);
         line-height: 1.35;
         margin-bottom: 18px;
-        min-height: 2.8em;
+        min-height: 2.75em;
     }
     .typing-text {
-        display: block;
-        margin-top: 4px;
+        display: inline-block;
         max-width: 100%;
         line-height: 1.35;
         white-space: nowrap;
+    }
+    .mobile-only-br {
+        display: inline;
     }
     .hero-description {
         font-size: 1.05rem;
