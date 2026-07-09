@@ -27,40 +27,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const getTypingSegments = () => {
         const lang = document.documentElement.getAttribute('lang') || 'en';
         if (lang === 'ko') {
-            return ['출처 기반 RAG', ', 디커플링 시스템', ',\nAI 가속기'];
+            return ['출처 기반 RAG', '디커플링 시스템', 'AI 가속기'];
         }
-        return ['Grounded RAG', ', Decoupled Systems', ',\nAI Accelerators'];
+        return ['Grounded RAG', 'Decoupled Systems', 'AI Accelerators'];
     };
 
     let segments = getTypingSegments();
     let segmentIndex = 0;
     let charIndex = 0;
+    let isDeleting = false;
 
     const typeEffect = () => {
-        if (segmentIndex < segments.length) {
-            const currentSegment = segments[segmentIndex];
+        const currentSegment = segments[segmentIndex];
+        
+        if (isDeleting) {
+            // Remove a character
+            typingTarget.textContent = currentSegment.substring(0, charIndex - 1);
+            charIndex--;
             
-            if (charIndex < currentSegment.length) {
-                // Type next character
-                typingTarget.textContent += currentSegment.charAt(charIndex);
-                charIndex++;
-                typingTimeout = setTimeout(typeEffect, 65); // Speed of typing letters (1.5x faster, ~65ms)
+            if (charIndex === 0) {
+                isDeleting = false;
+                segmentIndex = (segmentIndex + 1) % segments.length;
+                typingTimeout = setTimeout(typeEffect, 500); // Pause before next word
             } else {
-                // Segment completed, pause shortly before next segment
-                segmentIndex++;
-                charIndex = 0;
-                typingTimeout = setTimeout(typeEffect, 300); // Pause between items (1.5x faster, ~300ms)
+                typingTimeout = setTimeout(typeEffect, 30); // Deleting speed
             }
         } else {
-            // All segments completed, pause before clearing
-            holdTimeout = setTimeout(() => {
-                // Clear all at once
-                typingTarget.textContent = '';
-                segmentIndex = 0;
-                charIndex = 0;
-                // Wait before starting the cycle again
-                typingTimeout = setTimeout(typeEffect, 800);
-            }, 3900); // Hold full text for 3.9 seconds (1.3x longer)
+            // Add a character
+            typingTarget.textContent = currentSegment.substring(0, charIndex + 1);
+            charIndex++;
+            
+            if (charIndex === currentSegment.length) {
+                isDeleting = true;
+                typingTimeout = setTimeout(typeEffect, 2000); // Hold full word before deleting
+            } else {
+                typingTimeout = setTimeout(typeEffect, 65); // Typing speed
+            }
         }
     };
 
@@ -78,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         segments = getTypingSegments();
         segmentIndex = 0;
         charIndex = 0;
+        isDeleting = false;
         typingTarget.textContent = '';
         typingTimeout = setTimeout(typeEffect, 1000); // 1s delay on initial load
     };
@@ -104,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 segments = getTypingSegments();
                 segmentIndex = 0;
                 charIndex = 0;
+                isDeleting = false;
                 typeEffect();
             }
         });
