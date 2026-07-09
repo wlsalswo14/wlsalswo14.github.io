@@ -167,6 +167,10 @@ a {
     text-transform: uppercase;
 }
 
+.badge-mobile {
+    display: none;
+}
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -1193,6 +1197,12 @@ section {
         white-space: nowrap;
         margin-bottom: 16px;
         letter-spacing: 0.02em;
+    }
+    .badge-desktop {
+        display: none;
+    }
+    .badge-mobile {
+        display: inline;
     }
     .hero-title {
         font-size: clamp(1.4rem, 7.5vw, 2.25rem);
