@@ -1187,13 +1187,17 @@ section {
     .nav-menu {
         display: none;
     }
+    .badge {
+        font-size: clamp(0.55rem, 3.2vw, 0.72rem);
+        padding: 4px 10px;
+        white-space: nowrap;
+        margin-bottom: 16px;
+        letter-spacing: 0.02em;
+    }
     .hero-title {
-        font-size: clamp(1.9rem, 8vw, 2.25rem);
+        font-size: clamp(1.4rem, 7.5vw, 2.25rem);
         line-height: 1.12;
         margin-bottom: 16px;
-    }
-    .hero-title .lang-en .highlight {
-        display: block;
     }
     .hero-subtitle {
         font-size: clamp(1.25rem, 5.2vw, 1.55rem);
