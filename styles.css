@@ -440,7 +440,7 @@ section {
     border-right: 2px solid var(--color-cyan);
     padding-right: 4px;
     animation: blink-cursor 0.75s step-end infinite;
-    white-space: pre-wrap;
+    white-space: nowrap;
     font-weight: 700; /* Bold typing text for better legibility */
 }
 
@@ -1201,8 +1201,7 @@ section {
         display: inline;
         max-width: 100%;
         line-height: 1.35;
-        white-space: pre-wrap;
-        overflow-wrap: anywhere;
+        white-space: nowrap;
     }
     .hero-description {
         font-size: 1.05rem;
