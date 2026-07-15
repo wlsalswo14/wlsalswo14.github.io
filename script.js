@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const getTypingSegments = () => {
         const lang = document.documentElement.getAttribute('lang') || 'en';
         if (lang === 'ko') {
-            return ['출처 기반 RAG', '디커플링 시스템', 'AI 가속기'];
+            return ['에이전트 워크플로우', '출처 기반 RAG', 'AI 가속기'];
         }
-        return ['Grounded RAG', 'Decoupled Systems', 'AI Accelerators'];
+        return ['Agentic Workflows', 'Grounded RAG', 'AI Accelerators'];
     };
 
     let segments = getTypingSegments();
