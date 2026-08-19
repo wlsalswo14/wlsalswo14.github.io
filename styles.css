@@ -1,11 +1,8 @@
-/* ==========================================================================
+/* 
    Jin Minjae's Portfolio Website Stylesheet
-   Futuristic & Clean Dark Theme System
-   ========================================================================== */
+   Futuristic & Clean Design System (No Glassmorphism, No Neobrutalism)
+*/
 
-/* --------------------------------------------------------------------------
-   1. Design Tokens & Variables
-   -------------------------------------------------------------------------- */
 :root {
     /* Color Palette */
     --bg-darkest: #050507;
@@ -18,8 +15,9 @@
     --text-muted: #94A3B8;
     
     --color-cyan: #00F2FE;
-    --color-purple: #C084FC;
-    --color-blue: #3B82F6;
+    --color-purple: #C084FC; /* Bright neon purple for high contrast in dark mode */
+    --color-blue: #3B82F6;   /* Bright neon blue for high contrast in dark mode */
+    --color-accent: #00F2FE;
     
     /* Gradients */
     --grad-primary: linear-gradient(135deg, var(--color-cyan) 0%, var(--color-purple) 100%);
@@ -34,14 +32,11 @@
     --transition-fast: all 0.2s ease;
     
     /* Fonts */
-    --font-heading: 'Outfit', 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-code: 'Fira Code', monospace;
+    --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* --------------------------------------------------------------------------
-   2. Reset & Base Styles
-   -------------------------------------------------------------------------- */
+/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -88,10 +83,8 @@ body {
     background: var(--color-cyan);
 }
 
-/* --------------------------------------------------------------------------
-   3. Ambient & Background Elements
-   -------------------------------------------------------------------------- */
-.grid-overlay {
+/* Ambient Background Elements */
+.grid-background {
     position: fixed;
     top: 0;
     left: 0;
@@ -106,7 +99,7 @@ body {
     pointer-events: none;
 }
 
-.orb {
+.glow-orb {
     position: fixed;
     width: 50vw;
     height: 50vw;
@@ -117,7 +110,6 @@ body {
     filter: blur(150px);
     opacity: 0.08;
     pointer-events: none;
-    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .orb-1 {
@@ -132,9 +124,7 @@ body {
     background: var(--color-purple);
 }
 
-/* --------------------------------------------------------------------------
-   4. Typography & Common Elements
-   -------------------------------------------------------------------------- */
+/* Typography & Global Elements */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
@@ -160,6 +150,7 @@ a {
     font-weight: 700;
 }
 
+/* Helper Badges & Buttons */
 .badge {
     display: inline-block;
     max-width: 100%;
@@ -180,9 +171,45 @@ a {
     display: none;
 }
 
-/* --------------------------------------------------------------------------
-   5. Header & Navigation
-   -------------------------------------------------------------------------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: var(--border-radius);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-darkest);
+    border: 1px solid var(--text-primary);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--text-primary);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-left: 16px;
+}
+
+.btn-secondary:hover {
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Header & Nav */
 .main-header {
     position: fixed;
     top: 0;
@@ -197,8 +224,6 @@ a {
 .main-header.scrolled {
     background: rgba(5, 5, 7, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 }
 
 .nav-container {
@@ -241,13 +266,33 @@ a {
     transition: transform 0.3s ease;
 }
 
-/* Logo Hover Animations */
-.logo:hover .logo-bracket:first-child { animation: wave-left 0.6s ease infinite alternate; }
-.logo:hover .logo-bracket:last-child { animation: wave-right 0.6s ease infinite alternate; }
-.logo:hover .logo-letter:nth-of-type(2) { animation: wobble-letter 0.5s ease infinite; animation-delay: 0.1s; }
-.logo:hover .logo-letter:nth-of-type(3) { animation: jump-letter 0.4s ease infinite alternate; }
-.logo:hover .logo-letter:nth-of-type(5) { animation: wobble-letter 0.5s ease infinite; animation-delay: 0.2s; }
-.logo:hover .logo-dot { animation: spin-dot 0.8s ease infinite; color: var(--color-cyan); }
+/* Goofy & Cute Logo Hover Animations */
+.logo:hover .logo-bracket:first-child {
+    animation: wave-left 0.6s ease infinite alternate;
+}
+
+.logo:hover .logo-bracket:last-child {
+    animation: wave-right 0.6s ease infinite alternate;
+}
+
+.logo:hover .logo-letter:nth-of-type(2) { /* First J */
+    animation: wobble-letter 0.5s ease infinite;
+    animation-delay: 0.1s;
+}
+
+.logo:hover .logo-letter:nth-of-type(3) { /* M */
+    animation: jump-letter 0.4s ease infinite alternate;
+}
+
+.logo:hover .logo-letter:nth-of-type(5) { /* Second J */
+    animation: wobble-letter 0.5s ease infinite;
+    animation-delay: 0.2s;
+}
+
+.logo:hover .logo-dot {
+    animation: spin-dot 0.8s ease infinite;
+    color: var(--color-cyan);
+}
 
 @keyframes wave-left {
     0% { transform: rotate(0deg) translateX(0); }
@@ -327,48 +372,11 @@ a {
     background: rgba(0, 242, 254, 0.03);
 }
 
-/* Language Selector */
-.lang-selector {
-    display: flex;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 2px 4px;
-    margin-left: 15px;
+.mobile-only-br {
+    display: none;
 }
 
-.lang-btn {
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-size: 0.72rem;
-    font-weight: 600;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 12px;
-    transition: var(--transition-smooth);
-}
-
-.lang-btn.active {
-    color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.lang-btn:hover:not(.active) {
-    color: var(--color-cyan);
-}
-
-.lang-divider {
-    color: rgba(255, 255, 255, 0.15);
-    font-size: 0.7rem;
-    margin: 0;
-    user-select: none;
-}
-
-/* --------------------------------------------------------------------------
-   6. Sections Common Structure
-   -------------------------------------------------------------------------- */
+/* Sections Structure */
 section {
     padding: 100px 24px;
     width: 100%;
@@ -405,9 +413,7 @@ section {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
 }
 
-/* --------------------------------------------------------------------------
-   7. Hero Section
-   -------------------------------------------------------------------------- */
+/* Hero Section */
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -418,7 +424,7 @@ section {
 }
 
 .hero-content {
-    max-width: 750px;
+    max-width: 700px;
     width: 100%;
 }
 
@@ -443,21 +449,64 @@ section {
     padding-right: 4px;
     animation: blink-cursor 0.75s step-end infinite;
     white-space: pre-wrap;
-    font-weight: 700;
+    font-weight: 700; /* Bold typing text for better legibility */
 }
 
 .hero-description {
     font-size: 1.1rem;
     line-height: 1.7;
     margin-bottom: 40px;
-    color: #FFFFFF;
-    max-width: 650px;
+    color: #FFFFFF; /* Pure white color for maximum contrast and legibility */
+    max-width: 600px;
     overflow-wrap: break-word;
 }
 
-/* --------------------------------------------------------------------------
-   8. About Section
-   -------------------------------------------------------------------------- */
+.hero-actions {
+    display: flex;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+    animation: float 2s infinite ease-in-out;
+}
+
+.mouse {
+    width: 20px;
+    height: 32px;
+    border: 2px solid var(--text-secondary);
+    border-radius: 12px;
+    position: relative;
+}
+
+.wheel {
+    width: 4px;
+    height: 6px;
+    background-color: var(--color-cyan);
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-wheel 1.5s infinite;
+}
+
+.scroll-text {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+/* About Section */
 .about-grid {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -563,6 +612,15 @@ section {
     margin-bottom: 12px;
 }
 
+.lab-role {
+    display: block;
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
 .lab-tag {
     display: inline-block;
     padding: 4px 10px;
@@ -574,9 +632,7 @@ section {
     font-weight: 500;
 }
 
-/* --------------------------------------------------------------------------
-   9. Core Interests Section
-   -------------------------------------------------------------------------- */
+/* Core Interests Section */
 .interests-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -632,9 +688,7 @@ section {
     color: var(--text-secondary);
 }
 
-/* --------------------------------------------------------------------------
-   10. Experience Section
-   -------------------------------------------------------------------------- */
+/* Experience Section */
 .experience-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -744,9 +798,7 @@ section {
     color: var(--text-primary);
 }
 
-/* --------------------------------------------------------------------------
-   11. Milestones & Achievements (Timeline)
-   -------------------------------------------------------------------------- */
+/* Milestones Section */
 .timeline {
     position: relative;
     max-width: 800px;
@@ -857,9 +909,7 @@ section {
     color: var(--text-secondary);
 }
 
-/* --------------------------------------------------------------------------
-   12. Contact Section
-   -------------------------------------------------------------------------- */
+/* Contact Section */
 .contact-card {
     background: var(--bg-card);
     border: 1px solid rgba(255, 255, 255, 0.04);
@@ -1017,9 +1067,7 @@ section {
     visibility: visible;
 }
 
-/* --------------------------------------------------------------------------
-   13. Footer Section
-   -------------------------------------------------------------------------- */
+/* Footer Section */
 .main-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.03);
     padding: 40px 24px;
@@ -1030,7 +1078,7 @@ section {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .copyright {
@@ -1038,9 +1086,13 @@ section {
     color: var(--text-muted);
 }
 
-/* --------------------------------------------------------------------------
-   14. Animations & Effects
-   -------------------------------------------------------------------------- */
+.designed-by {
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Scroll Reveal Animations */
 .scroll-reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -1060,7 +1112,9 @@ section {
 .hero-title.fade-in { animation-delay: 0.1s; }
 .hero-subtitle.fade-in { animation-delay: 0.2s; }
 .hero-desc.fade-in { animation-delay: 0.3s; }
+.hero-cta.fade-in { animation-delay: 0.4s; }
 
+/* Animations Definitions */
 @keyframes fade-in-anim {
     from {
         opacity: 0;
@@ -1077,15 +1131,30 @@ section {
     50% { border-color: var(--color-cyan) }
 }
 
-/* --------------------------------------------------------------------------
-   15. Language Toggle Rules
-   -------------------------------------------------------------------------- */
-html[lang="en"] .lang-ko { display: none !important; }
-html[lang="ko"] .lang-en { display: none !important; }
+@keyframes scroll-wheel {
+    0% {
+        top: 6px;
+        opacity: 1;
+        height: 6px;
+    }
+    50% {
+        top: 14px;
+        opacity: 0.3;
+        height: 4px;
+    }
+    100% {
+        top: 6px;
+        opacity: 1;
+        height: 6px;
+    }
+}
 
-/* --------------------------------------------------------------------------
-   16. Responsive Media Queries
-   -------------------------------------------------------------------------- */
+@keyframes float {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -6px); }
+}
+
+/* Responsive Web Design */
 @media (max-width: 900px) {
     section {
         width: 100%;
@@ -1126,17 +1195,10 @@ html[lang="ko"] .lang-en { display: none !important; }
         overflow-wrap: break-word;
     }
     .badge {
-        font-size: clamp(0.55rem, 3.2vw, 0.72rem);
-        padding: 4px 10px;
-        white-space: nowrap;
-        margin-bottom: 16px;
-        letter-spacing: 0.02em;
-    }
-    .badge-desktop {
-        display: none;
-    }
-    .badge-mobile {
-        display: inline;
+        font-size: 0.8rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow-wrap: anywhere;
     }
     .paragraph {
         font-size: 1rem;
@@ -1159,9 +1221,18 @@ html[lang="ko"] .lang-en { display: none !important; }
     .nav-menu {
         display: none;
     }
-    .lang-selector {
-        margin-left: auto;
-        margin-right: 10px;
+    .badge {
+        font-size: clamp(0.55rem, 3.2vw, 0.72rem);
+        padding: 4px 10px;
+        white-space: nowrap;
+        margin-bottom: 16px;
+        letter-spacing: 0.02em;
+    }
+    .badge-desktop {
+        display: none;
+    }
+    .badge-mobile {
+        display: inline;
     }
     .hero-title {
         font-size: clamp(1.4rem, 7.5vw, 2.25rem);
@@ -1180,10 +1251,25 @@ html[lang="ko"] .lang-en { display: none !important; }
         line-height: 1.35;
         white-space: nowrap;
     }
+    .mobile-only-br {
+        display: inline;
+    }
     .hero-description {
         font-size: 1.05rem;
         line-height: 1.7;
         margin-bottom: 30px;
+    }
+    .hero-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .hero-metrics {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 30px;
+    }
+    .btn-secondary {
+        margin-left: 0;
     }
     .contact-card {
         padding: 28px 16px;
@@ -1274,4 +1360,50 @@ html[lang="ko"] .lang-en { display: none !important; }
     .tech-tag {
         font-size: 0.95rem;
     }
-}\n
+}
+
+/* Language Toggle Rules */
+html[lang="en"] .lang-ko { display: none !important; }
+html[lang="ko"] .lang-en { display: none !important; }
+
+/* Language Selector Widget in Nav */
+.lang-selector {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2px 4px;
+    margin-left: 15px;
+}
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+.lang-btn.active {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.1);
+}
+.lang-btn:hover:not(.active) {
+    color: var(--color-cyan);
+}
+.lang-divider {
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 0.7rem;
+    margin: 0;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .lang-selector {
+        margin-left: auto;
+        margin-right: 10px;
+    }
+}
