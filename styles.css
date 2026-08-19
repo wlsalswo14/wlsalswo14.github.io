@@ -568,45 +568,6 @@ section {
     width: 100%;
 }
 
-.lab-card-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-}
-
-.lab-card-link:hover h3 {
-    color: var(--color-cyan);
-}
-
-.lab-card-link h3 .inline-link-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 15px;
-    height: 15px;
-    margin-left: 6px;
-    opacity: 0.7;
-    transition: transform var(--transition-fast), opacity var(--transition-fast), color var(--transition-fast);
-}
-
-.lab-card-link:hover h3 .inline-link-icon {
-    opacity: 1;
-    color: var(--color-cyan);
-    transform: translate(2px, -2px);
-}
-
-.text-link {
-    color: var(--color-cyan);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    transition: var(--transition-fast);
-}
-
-.text-link:hover {
-    color: #FFFFFF;
-    text-shadow: 0 0 8px var(--color-cyan);
-}
-
 .lab-card:hover {
     border-color: rgba(0, 242, 254, 0.3);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
@@ -916,8 +877,9 @@ section {
     color: var(--text-primary);
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     transition: var(--transition-fast);
+    text-decoration: none;
 }
 
 .timeline-link:hover {
@@ -927,10 +889,10 @@ section {
 .inline-link-icon {
     display: inline-block;
     vertical-align: middle;
-    width: 16px;
-    height: 16px;
-    margin-left: 4px;
-    opacity: 0.7;
+    width: 18px;
+    height: 18px;
+    color: var(--color-cyan);
+    opacity: 0.8;
     transition: transform var(--transition-fast), opacity var(--transition-fast), color var(--transition-fast);
 }
 
