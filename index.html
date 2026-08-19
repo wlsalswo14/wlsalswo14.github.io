@@ -4,24 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Minjae Jin | AI Systems & AI Accelerators</title>
-    <meta name="description" content="Portfolio of Minjae Jin. Active developer at vergins lab and Intelligent Semiconductor Engineering student at SeoulTech. Studying AI accelerators and RAG systems.">
+    <meta name="description" content="Portfolio of Minjae Jin. Active developer at verdigris labs and Intelligent Semiconductor Engineering student at SeoulTech. Studying AI accelerators and RAG systems.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css?v=20260819_1">
+    <link rel="stylesheet" href="styles.css?v=20260819_2">
 </head>
 <body>
-    <!-- Glowing background decorative objects (orbs) -->
+    <!-- Ambient Background Elements -->
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
     <div class="grid-overlay"></div>
 
-    <!-- Header Navigation -->
+    <!-- ================================================================= -->
+    <!-- Header Navigation                                                -->
+    <!-- ================================================================= -->
     <header class="main-header" id="header">
         <div class="nav-container">
-            <a href="#hero" class="logo" id="nav-logo">
+            <a href="#hero" class="logo" id="nav-logo" aria-label="Minjae Jin Home">
                 <span class="logo-bracket">&lt;</span><span class="logo-letter">J</span><span class="logo-letter">M</span><span class="logo-dot">.</span><span class="logo-letter">J</span><span class="logo-bracket">/&gt;</span>
             </a>
             <nav class="nav-menu" id="nav-menu">
@@ -46,17 +48,21 @@
                     <span class="lang-ko">연락처</span>
                 </a>
             </nav>
-            <div class="lang-selector">
-                <button class="lang-btn active" data-lang="en">EN</button>
+            <div class="lang-selector" aria-label="Language selection">
+                <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
                 <span class="lang-divider">/</span>
-                <button class="lang-btn" data-lang="ko">KO</button>
+                <button class="lang-btn" data-lang="ko" aria-label="한국어로 전환">KO</button>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Area -->
+    <!-- ================================================================= -->
+    <!-- Main Content Area                                                -->
+    <!-- ================================================================= -->
     <main>
-        <!-- Hero Section -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- Hero Section                                                  -->
+        <!-- ------------------------------------------------------------- -->
         <section id="hero" class="hero-section">
             <div class="hero-content">
                 <div class="badge fade-in" id="hero-badge">
@@ -80,7 +86,9 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- 01. About Section                                             -->
+        <!-- ------------------------------------------------------------- -->
         <section id="about" class="about-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
@@ -162,7 +170,7 @@
                             </div>
                         </div>
 
-                        <!-- 지능형 센서 연구실 Highlight Card -->
+                        <!-- Intelligent Sensor Lab Highlight Card -->
                         <div class="lab-card" id="lab-highlight">
                             <div class="lab-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -185,7 +193,9 @@
             </div>
         </section>
 
-        <!-- Core Interests Section -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- 02. Core Interests Section                                    -->
+        <!-- ------------------------------------------------------------- -->
         <section id="interests" class="interests-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
@@ -258,7 +268,9 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- 03. Experience Section                                        -->
+        <!-- ------------------------------------------------------------- -->
         <section id="experience" class="experience-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
@@ -302,7 +314,9 @@
             </div>
         </section>
 
-        <!-- Achievements Section -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- 04. Achievements Section (Milestones)                         -->
+        <!-- ------------------------------------------------------------- -->
         <section id="milestones" class="milestones-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
@@ -314,7 +328,7 @@
                     <div class="section-line"></div>
                 </div>
                 <div class="timeline">
-                    <!-- SeoulTech Speech Recognition & LLM Competition -->
+                    <!-- Milestone: SeoulTech Speech Recognition & LLM Competition -->
                     <div class="timeline-item" id="milestone-seoultech-speech-llm">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
@@ -332,7 +346,7 @@
                         </div>
                     </div>
 
-                    <!-- National U300 Student Startup Team -->
+                    <!-- Milestone: National U300 Student Startup Team -->
                     <div class="timeline-item" id="milestone-u300">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
@@ -352,11 +366,31 @@
                             </p>
                         </div>
                     </div>
+
+                    <!-- 
+                    [HOW TO ADD A NEW MILESTONE]
+                    Copy the block below and paste it above or below:
+                    
+                    <div class="timeline-item" id="milestone-custom-id">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">YYYY. MM</div>
+                            <h3 class="timeline-title">
+                                <span class="lang-en">Title in English</span>
+                                <span class="lang-ko">한국어 제목</span>
+                            </h3>
+                            <p class="timeline-desc lang-en">English description here.</p>
+                            <p class="timeline-desc lang-ko">한국어 설명을 적어주세요.</p>
+                        </div>
+                    </div>
+                    -->
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ------------------------------------------------------------- -->
+        <!-- 05. Contact Section                                           -->
+        <!-- ------------------------------------------------------------- -->
         <section id="contact" class="contact-section scroll-reveal">
             <div class="section-container">
                 <div class="section-header">
@@ -382,7 +416,7 @@
                     <div class="contact-channels">
                         <!-- Email Link -->
                         <div class="channel-card" id="contact-email-card">
-                            <div class="channel-icon">
+                            <div class="channel-icon" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                             </div>
                             <div class="channel-info">
@@ -396,8 +430,8 @@
                         </div>
                         
                         <!-- X (Twitter) Link -->
-                        <a href="https://x.com/jinminjae258654" target="_blank" rel="noopener noreferrer" class="channel-card hover-link" id="contact-x-link">
-                            <div class="channel-icon">
+                        <a href="https://x.com/jinminjae258654" target="_blank" rel="noopener noreferrer" class="channel-card hover-link" id="contact-x-link" aria-label="X Twitter profile">
+                            <div class="channel-icon" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
                                     <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
@@ -407,14 +441,14 @@
                                 <span class="channel-label">X / Twitter</span>
                                 <span class="channel-val">@jinminjae258654</span>
                             </div>
-                            <div class="channel-arrow">
+                            <div class="channel-arrow" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
                             </div>
                         </a>
 
                         <!-- LinkedIn Link -->
-                        <a href="https://www.linkedin.com/in/minjae-jin-92b827284" target="_blank" rel="noopener noreferrer" class="channel-card hover-link" id="contact-linkedin-link">
-                            <div class="channel-icon">
+                        <a href="https://www.linkedin.com/in/minjae-jin-92b827284" target="_blank" rel="noopener noreferrer" class="channel-card hover-link" id="contact-linkedin-link" aria-label="LinkedIn profile">
+                            <div class="channel-icon" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                                     <rect x="2" y="9" width="4" height="12"></rect>
@@ -425,25 +459,27 @@
                                 <span class="channel-label">LinkedIn</span>
                                 <span class="channel-val">Minjae Jin</span>
                             </div>
-                            <div class="channel-arrow">
+                            <div class="channel-arrow" aria-hidden="true">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12,5 19,12 12,19"></polyline></svg>
                             </div>
                         </a>
                     </div>
-                    <div id="toast" class="toast-notification">Email copied to clipboard!</div>
+                    <div id="toast" class="toast-notification" role="alert" aria-live="polite">Email copied to clipboard!</div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- ================================================================= -->
+    <!-- Footer                                                            -->
+    <!-- ================================================================= -->
     <footer class="main-footer">
         <div class="footer-container">
             <p class="copyright">&copy; 2026 Jin Minjae. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Script File -->
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js?v=20260819_2"></script>
 </body>
-</html>
+</html>\n
