@@ -873,6 +873,34 @@ section {
     margin-bottom: 12px;
 }
 
+.timeline-link {
+    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-fast);
+}
+
+.timeline-link:hover {
+    color: var(--color-cyan);
+}
+
+.inline-link-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    opacity: 0.7;
+    transition: transform var(--transition-fast), opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.timeline-link:hover .inline-link-icon {
+    opacity: 1;
+    color: var(--color-cyan);
+    transform: translate(2px, -2px);
+}
+
 .timeline-desc {
     font-size: 0.95rem;
     line-height: 1.7;
