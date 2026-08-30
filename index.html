@@ -21,8 +21,45 @@
     <!-- Header Navigation -->
     <header class="main-header" id="header">
         <div class="nav-container">
-            <a href="#hero" class="logo" id="nav-logo">
-                <span class="logo-bracket">&lt;</span><span class="logo-letter">J</span><span class="logo-letter">M</span><span class="logo-dot">.</span><span class="logo-letter">J</span><span class="logo-bracket">/&gt;</span>
+            <a href="#hero" class="logo" id="nav-logo" aria-label="Minjae Jin Portfolio">
+                <div class="logo-icon-wrapper">
+                    <svg class="logo-chip-svg" width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="chipGrad" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00F2FE"/>
+                                <stop offset="100%" stop-color="#C084FC"/>
+                            </linearGradient>
+                            <linearGradient id="coreGrad" x1="12" y1="12" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00F2FE"/>
+                                <stop offset="100%" stop-color="#3B82F6"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Chip Frame -->
+                        <rect x="5.5" y="5.5" width="25" height="25" rx="6" fill="#0A0A12" stroke="url(#chipGrad)" stroke-width="1.5" />
+                        
+                        <!-- Silicon Pins -->
+                        <line x1="12" y1="2" x2="12" y2="5.5" stroke="#00F2FE" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+                        <line x1="18" y1="2" x2="18" y2="5.5" stroke="#00F2FE" stroke-width="1.2" stroke-linecap="round" opacity="0.95" />
+                        <line x1="24" y1="2" x2="24" y2="5.5" stroke="#00F2FE" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+                        
+                        <line x1="12" y1="30.5" x2="12" y2="34" stroke="#C084FC" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+                        <line x1="18" y1="30.5" x2="18" y2="34" stroke="#C084FC" stroke-width="1.2" stroke-linecap="round" opacity="0.95" />
+                        <line x1="24" y1="30.5" x2="24" y2="34" stroke="#C084FC" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+                        
+                        <line x1="2" y1="12" x2="5.5" y2="12" stroke="#00F2FE" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+                        <line x1="2" y1="18" x2="5.5" y2="18" stroke="#00F2FE" stroke-width="1.2" stroke-linecap="round" opacity="0.95" />
+                        <line x1="2" y1="24" x2="5.5" y2="24" stroke="#00F2FE" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+                        
+                        <line x1="30.5" y1="12" x2="34" y2="12" stroke="#C084FC" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+                        <line x1="30.5" y1="18" x2="34" y2="18" stroke="#C084FC" stroke-width="1.2" stroke-linecap="round" opacity="0.95" />
+                        <line x1="30.5" y1="24" x2="34" y2="24" stroke="#C084FC" stroke-width="1.2" stroke-linecap="round" opacity="0.85" />
+
+                        <!-- Neural Core -->
+                        <rect x="12.5" y="12.5" width="11" height="11" rx="2.5" fill="url(#coreGrad)" opacity="0.9" />
+                        <circle cx="18" cy="18" r="2.2" fill="#FFFFFF" class="core-pulse-node" />
+                    </svg>
+                </div>
+                <span class="logo-title">MINJAE <span class="highlight">JIN</span></span>
             </a>
             <nav class="nav-menu" id="nav-menu">
                 <a href="#about" class="nav-link" id="link-about">
